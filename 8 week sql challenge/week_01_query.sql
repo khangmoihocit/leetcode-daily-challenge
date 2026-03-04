@@ -3,6 +3,7 @@
    --------------------*/
 
 -- 1. What is the total amount each customer spent at the restaurant?
+use dannys_diner;
 select * from menu;
 select * from sales;
 select * from members;
