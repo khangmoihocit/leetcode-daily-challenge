@@ -61,7 +61,7 @@ and s.order_date in (select sales.order_date from sales
                     and sales.order_date >= m.join_date
                     order by sales.order_date ASC limit 1);
 
-      WITH ranked_sales AS (
+      create view ranked_sales AS (
     SELECT s.customer_id, m.product_name, s.order_date,
            DENSE_RANK() OVER(PARTITION BY s.customer_id ORDER BY s.order_date ASC) as rank
     FROM sales s
